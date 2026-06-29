@@ -58,7 +58,7 @@ The attack is succesful, the scrypt is the same from above but with ```A.op = 2 
 The attack is not succesful, the arp reply is dropped
 ### 1.C
 The Host constructs an ARP gratuitous packet with IP-B mapped to MAC-M in the same 2 scenarios as 1.B:
-1. with IP-B already in a cache:
+1. with IP-B already in A cache:
 
 
 The attack is succesful
