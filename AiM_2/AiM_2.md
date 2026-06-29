@@ -48,7 +48,7 @@ A Chache after sending the forged ARP request:
 We can observe that IP-B is mapped to MAC-M
 ### 1.B
 The Host constructs an ARP reply with IP-B mapped to MAC-M in 2 scenarios:
-1. with IP-B already in a cache:
+1. with IP-B already in A cache:
 
     ![](task1B.png)
 
