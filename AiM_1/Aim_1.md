@@ -89,4 +89,4 @@ Using Chrome it was possible to delete the HSTS set entry for the website, and w
 
 ![](removeHSTS.png)
 
-Adding the website back to the HSTS set the request blocked by the browser
+By adding the website back to the HSTS set the request gets blocked by the browser.
