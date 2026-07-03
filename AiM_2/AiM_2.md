@@ -175,6 +175,7 @@ if olddata1 in payload:
 elif olddata2 in payload:
     newdata = payload.replace(olddata2, newdata2)
 ...
-```<br>
+```
+<br>
 It is needed to keep the same pkt lenght in order to have the same sequence number, i archieved this by adding the right amount of spaces.
 ![](task3.png)
