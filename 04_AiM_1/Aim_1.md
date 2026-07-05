@@ -32,24 +32,24 @@ cache-control: public, must-revalidate, proxy-revalidate
 ### 2. Point your browser to <b>http</b>://www.icmarcopolots.edu.it:
 Despite the remote server's configuration to permanently redirect all traffic to HTTPS (via a 301 Moved Permanently status code), the victim's browser remains on the unencrypted HTTP connection. The address bar explicitly displays a "Not Secure" warning.
 
-![](notSecure.png)
+![](images/notSecure.png)
 
 Burp establishes the secure TLS connection with the real server itself, downgrades the content received, and serves it back to the browser in plain text HTTP.
 ### 3. Try to apply changes to requests/responses
 
 #### 1. Reading credential in plain text:
 
-![](credentials.png)
+![](images/credentials.png)
 
 #### 2. Modify the web page:
 With match and replace Burp feature the webpage was modified:
 - Expected aspect:
 
-![](Normal.png)
+![](images/Normal.png)
 
 - Modifyed aspect:
 
-![](Hacked.png)
+![](images/Hacked.png)
 
 ## Case B
 
@@ -82,11 +82,11 @@ strict-transport-security: max-age=31536000 #### HSTS header
 ### 2. Point browser to <b>http</b>://icrilke.edu.it
 In this case the attack is not successfull since the browser blocks the traffic
 
-![](WithHSTS.png)
+![](images/WithHSTS.png)
 
 ### 3. Delete website from HSTS
 Using Chrome it was possible to delete the HSTS set entry for the website, and with the Burp proxy it was possible to delete the STS headers and to perform the attack.
 
-![](removeHSTS.png)
+![](images/removeHSTS.png)
 
 By adding the website back to the HSTS set the request gets blocked by the browser.

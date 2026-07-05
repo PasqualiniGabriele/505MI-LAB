@@ -7,7 +7,7 @@ A pre-built SEED Ubuntu 20.04 Virtual Desktop Infrastructure was downloaded from
 
 3 docker containers from Labsetup.zip were run
 
-![](Containers.png)
+![](images/Containers.png)
 
 Running ifconfig on all 3 containers we can see that:
 
@@ -43,14 +43,14 @@ sendp(pkt)
 
 A Chache after sending the forged ARP request:
 
-![](task1A.png)
+![](images/task1A.png)
 
 We can observe that IP-B is mapped to MAC-M
 ### 1.B
 The Host constructs an ARP reply with IP-B mapped to MAC-M in 2 scenarios:
 1. with IP-B already in A cache:
 
-    ![](task1B.png)
+    ![](images/task1B.png)
 
 The attack is succesful, the scrypt is the same from above but with ```A.op = 2 ## Reply```
 
@@ -109,14 +109,14 @@ Since it is wanted that the ARP cache of A and B to stay poisoned, a python scri
 ### Step 2: Testing
 
 ##### A pings B without IP fowarding
-![](task2_no_forwarding.png)
+![](images/task2_no_forwarding.png)
 
 It can be observed that:
 1. the packets 1 and 3 are the ARP poisoning
 2. A sends an Echo request to 10.9.0.6
 3. No response is sent by B because it never recived the echo request, since it was directed to M
 ##### A pings B with IP fowarding
-![](task2_forwarding.png)
+![](images/task2_forwarding.png)
 
 It can be observed that:
 1. A sends an echo request to IP-B (to MAC-M)
@@ -180,4 +180,4 @@ elif olddata2 in payload:
 
 
 It is needed to keep the same pkt lenght in order to have the same sequence number, i archieved this by adding the right amount of spaces.
-![](task3.png)
+![](images/task3.png)
