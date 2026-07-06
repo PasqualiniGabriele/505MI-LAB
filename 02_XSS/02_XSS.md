@@ -62,4 +62,4 @@ By writing <iframe src="javascript:alert(`xss`)"> as tracking id we obtain a suc
 
 ![](images/reflected_XSS.png)
 
-The difference from the DOM XSS is that in this case the &lt;code&gt;...&lt;/code&gt; html code is sent to the backend
+The difference from the DOM XSS is that in this case the &lt;code&gt;...&lt;/code&gt; element is rendered based on the backend response and interpreted as html
