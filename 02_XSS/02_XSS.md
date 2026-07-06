@@ -55,3 +55,11 @@ So the `test` text is loaded based on the response of the backend.
 ![](images/backend_call.png)
 
 Similarly to before the code ***bypassSecurityTrustHtml(`<code>${e.data[0].orderId}</code>`),*** bypasses the Angular security check on user input, and the code is interpreted as html.
+
+## Reflected XSS
+
+By writing <iframe src="javascript:alert(`xss`)"> as tracking id we obtain a successful Reflected XSS:
+
+![](images/reflected_XSS.png)
+
+The difference from the DOM XSS is that in this case the &lt;code&gt;...&lt;/code&gt; html code is sent to the backend
