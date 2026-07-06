@@ -54,3 +54,4 @@ So the `test` text is loaded based on the response of the backend.
 
 ![](images/backend_call.png)
 
+Similarly to before the code `bypassSecurityTrustHtml(`<code>${e.data[0].orderId}</code>`),` bypasses the Angular security check on user input, and the code is interpreted as html.
