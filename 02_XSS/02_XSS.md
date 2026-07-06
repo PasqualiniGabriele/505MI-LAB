@@ -8,3 +8,5 @@
 ### Perform a DOM XSS attack with <iframe src="javascript:alert(`xss`)">
 
 ![](images/search_bar.png)
+![](images/alert.png)
+
