@@ -69,7 +69,7 @@ Inside the Juice Shop web page there is also the Last Login IP section associate
 
 ![](images/small.png)
 
-If it is possible to manipulate the IP that is registered inside the element a Reflected XSS may possible.
+If it is possible to manipulate the IP that is registered inside the element, a Reflected XSS may possible.
 
 ### Analyzing traffic in Burp:
 While logging out this request is encountered:
