@@ -62,7 +62,7 @@ By writing <iframe src="javascript:alert(`xss`)"> as tracking id we obtain a suc
 
 ![](images/reflected_XSS.png)
 
-The difference from the DOM XSS is that in this case the &lt;code&gt;...&lt;/code&gt; element is rendered based on the backend response and interpreted as html
+The difference from the DOM XSS is that in this case the &lt;code&gt;...&lt;/code&gt; element is rendered based on the data sent to the backend
 
 ## Another Reflected XSS:
 Inside the Juice Shop web page there is also the Last Login IP section associated to an account. The last login IP is displayed in a <small> element. 
