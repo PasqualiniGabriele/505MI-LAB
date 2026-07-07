@@ -65,7 +65,7 @@ By writing <iframe src="javascript:alert(`xss`)"> as tracking id we obtain a suc
 The difference from the DOM XSS is that in this case the &lt;code&gt;...&lt;/code&gt; element is rendered based on the data sent to the backend
 
 ## Another Reflected XSS:
-Inside the Juice Shop web page there is also the Last Login IP section associated to an account. The last login IP is displayed in a <small> element. 
+Inside the Juice Shop web page there is also the Last Login IP section associated to an account. The last *login IP* is displayed in a <small> element. 
 
 ![](images/small.png)
 
@@ -75,9 +75,9 @@ If it is possible to manipulate the IP that is registered inside the element, a 
 While logging out this request is encountered:
 
 ![](images/logout_packet.png)
-If the goal is to alter the IP value being stored, there are essentially two possible approaches. The first is to change the actual source IP address of the connection, for example by using a VPN or a proxy. However, this would only allow the use of a valid IP address and would not make it possible to inject arbitrary content, such as an HTML payload containing an <iframe>.
+If the goal is to alter the IP value being stored, there are essentially two possible approaches. The `first approach` is to change the actual source IP address of the connection, for example by using a VPN or a proxy. However, this would only allow the use of a valid IP address and would not make it possible to inject arbitrary content, such as an HTML payload containing an <iframe>.
 
-The second approach is to assume that the application is deployed behind a reverse proxy and that it obtains the client IP address from one of the HTTP headers commonly used in such configurations, such as X-Forwarded-For, X-Real-IP, or similar headers. Since it was not known which specific header the application trusted, I proceeded by testing several of the most common proxy-related headers with Match and replace feature on Burp:
+The `second approach` is to assume that the application is deployed behind a reverse *proxy* and that it obtains the client IP address from one of the HTTP headers commonly used in such configurations, such as X-Forwarded-For, X-Real-IP, or similar headers. Since it was not known which specific header the application trusted, I proceeded by testing several of the most common proxy-related headers with `Match and replace` feature on Burp:
 
 ![](images/match_and_replace.png)
 
@@ -85,7 +85,7 @@ Now while logging out, if the backend accepts one of this headers i should be ab
 
 ![](images/find_header.png)
 
-So the header used to communicate the IP is True-Client-IP
+So the header used to communicate the IP is `True-Client-IP`
 
 ### Reflected XSS.2
 At this point it is possible to insert the same iframe into the True-Client-IP Header:
