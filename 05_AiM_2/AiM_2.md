@@ -3,7 +3,7 @@
 ## Step 1: Setting all up for the simulation
 A pre-built SEED Ubuntu 20.04 Virtual Desktop Infrastructure was downloaded from seedsecuritylabs.org and runned on Virtual Box
 
-![](VM.png)
+![](images/VM.png)
 
 3 docker containers from Labsetup.zip were run
 
