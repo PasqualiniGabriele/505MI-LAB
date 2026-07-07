@@ -22,7 +22,7 @@ In the html we can see a new iframe with the alert, so the attack is successful 
 ![](images/root_cause.png)
 
 In this case we an see `this.searchValue = this.sanitizer.bypassSecurityTrustHtml(e)` which is an Angular feature that disables sanitization for specific content types (HTML in this casae). Improper usage can result in XSS vulnerabilities.
-A simple solution is as simple as removing that line of code: `this.searchValue = e`
+A simple solution is as simple as changing it in: `this.searchValue = e`
 
 ![](images/solution.png)
 
